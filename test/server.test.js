@@ -2,15 +2,9 @@ var request = require('supertest');
 var server = require('../app/server');
 var file = require('../app/filesystem');
 var fs = require('fs');
+var should = require('should');
 
-describe('server', function(){
-	describe('/alive', function(){
-		it('should give 200 as response', function(done){
-			request(server.app)
-				.get('/alive')
-				.expect('OK', done);
-		});
-	});
+describe('route', function(){
 	describe('/static', function(){
 		before(function(){
 			file.write('assets/file.txt', 'content', fs);
@@ -22,6 +16,13 @@ describe('server', function(){
 			request(server.app)
 				.get('/static/file.txt')
 				.expect(200, done);
+		});
+	});
+	describe('/alive', function(){
+		it('should be accessible', function(done){
+			request(server.app)
+				.get('/alive')
+				.expect('OK', done);
 		});
 	});
 });
