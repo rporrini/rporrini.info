@@ -5,6 +5,6 @@ relative_path=`dirname $0`
 directory=`cd $relative_path;pwd`
 cd $directory
 
-./test.sh
+npm test
 git push heroku master
 
