@@ -12,9 +12,7 @@ describe('Application', function(){
 	});
 	describe('/static', function(){
 		before(function(){
-			file.writeFile(__dirname + '/../app/assets/file.txt', 'content', function(err){
-				console.log(err);
-			});
+			file.writeFile(__dirname + '/../app/assets/file.txt', 'content');
 		});
 		after(function(){
 			file.unlink(__dirname + '/../app/assets/file.txt');
