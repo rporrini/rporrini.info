@@ -12,10 +12,10 @@ describe('Application', function(){
 	});
 	describe('/static', function(){
 		before(function(){
-			file.writeFile('app/assets/file.txt', 'content');
+			file.writeFile(__dirname + '/../app/assets/file.txt', 'content');
 		});
 		after(function(){
-			file.unlink('app/assets/file.txt');
+			file.unlink(__dirname + '/../app/assets/file.txt');
 		});
 		it('should mirror static resources', function(done){
 			request(server.app)
