@@ -1,8 +1,9 @@
 var request = require('supertest');
 var server = require('../app/server');
-var file = require('fs');
+var file = require('../app/filesystem');
+var fs = require('fs');
 
-describe('Application', function(){
+describe('server', function(){
 	describe('/alive', function(){
 		it('should give 200 as response', function(done){
 			request(server.app)
@@ -12,10 +13,10 @@ describe('Application', function(){
 	});
 	describe('/static', function(){
 		before(function(){
-			file.writeFile(__dirname + '/../app/assets/file.txt', 'content');
+			file.write('assets/file.txt', 'content', fs);
 		});
 		after(function(){
-			file.unlink(__dirname + '/../app/assets/file.txt');
+			file.remove('assets/file.txt', fs);
 		});
 		it('should mirror static resources', function(done){
 			request(server.app)
