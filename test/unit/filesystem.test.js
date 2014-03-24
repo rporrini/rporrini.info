@@ -1,5 +1,5 @@
 var should = require('should');
-var file = require('../app/filesystem');
+var file = require('../../app/filesystem');
 
 describe('filesystem', function(){
 	describe('pathOf', function(){

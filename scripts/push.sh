@@ -7,12 +7,12 @@ cd $directory
 
 case $1 in
 	development)
-		remote=origin
+		./run-tests.sh validation
+		git push origin master
 		;;
 	production)
-		remote=heroku
+		git push heroku master
+		./run-tests.sh production
 		;;
 esac
-
-git push $remote master
 

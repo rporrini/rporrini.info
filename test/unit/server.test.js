@@ -1,6 +1,6 @@
 var request = require('supertest');
-var server = require('../app/server');
-var file = require('../app/filesystem');
+var server = require('../../app/server');
+var file = require('../../app/filesystem');
 var fs = require('fs');
 var should = require('should');
 

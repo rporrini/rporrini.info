@@ -5,4 +5,4 @@ directory=`cd $relative_path;pwd`
 cd $directory
 cd ..
 
-node_modules/mocha/bin/mocha
+node_modules/.bin/mocha test/$1
