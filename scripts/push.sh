@@ -7,7 +7,6 @@ cd $directory
 
 case $1 in
 	development)
-		./run-tests.sh validation
 		git push origin master
 		;;
 	production)

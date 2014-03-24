@@ -25,4 +25,11 @@ describe('route', function(){
 				.expect('OK', done);
 		});
 	});
+	describe('/', function(){
+		it('should be accessible', function(done){
+			request(server.app)
+				.get('/')
+				.expect(200, done);
+		});
+	});
 });
