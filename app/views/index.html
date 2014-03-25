@@ -3,12 +3,82 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="" target="_blank"/>
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/css/style.css" rel="stylesheet"/>
 	<script src="static/js/bootstrap.min.js"></script>
 	<title>Riccardo Porrini's Personal Page</title>
 </head>
 <body class="container">
 	<div class="page-header">
-	<h2>Riccardo Porrini</h2>
+	<h1>Riccardo Porrini</h1>
 	</div>
+	<div class="row">
+  	<div class="col-xs-14 col-md-9">
+  		<p class="text-justify">
+		I am a Software Developer at <a href="http://www.7pixel.it">7Pixel</a> 
+		and also a PhD Student at <a href="http://www.disco.unimib.it">DISCo</a> (Dipartimento di Informatica, Sistemistica e Comunicazione), 
+		<a href="http://www.unimib.it">University of Milano-Bicocca</a>. My research interests include <a href="http://en.wikipedia.org/wiki/Record_linkage">Entity Reconciliation</a>, <a href="http://en.wikipedia.org/wiki/Dataspaces">Dataspaces</a>, 
+		<a href="http://semanticweb.org/wiki/Main_Page">Semantic Web</a> and <a href="http://www.w3.org/wiki/SweoIG/TaskForces/CommunityProjects/LinkingOpenData">Linked Data</a>.
+		As Software Developer I usually develop eCommerce enterprise software, more specifically in online product prices comparison.
+		I have been working on the back-end software for <a href="http://www.trovaprezzi.it">TrovaPrezzi</a>, the major italian Online Price Comparison Engine.
+		</p>
+		
+		<h3>Projects</h3>
+		
+		<h5><span class="label label-info">Result Oriented Autocomplete</span></h5>
+		<p class="text-justify">
+		An Autocompletion System based on a light-weight semi-structured data autocompletion matching algorithm, designed specifically for
+		the eCommerce domain. The system has been developed during my MSc thesis. Currently the system is online and you can try it by 
+		typing an autocompletion query in the text box below (results are in Italian language). We also evaluated our approach to autocompletion 
+		in terms of effectiveness, and also defined a <a href="/static/files/query_set_extended.zip">dataset</a> based on 
+		<a href="http://dl.acm.org/citation.cfm?id=582418">graded relevance judgement</a>.</p>
+		<form role="form">
+			<input class="form-control" type="text" id="tryit" placeholder="Type something (e.g., iphone)"/>
+		</form>
+		
+		<h3>Didactics</h3>
+		
+		<h5><span class="label label-info">October 23 2013</span></h5>
+		<p class="text-justify">
+		Presentation the project that I'm currently working on: facet extraction from taxonomies. The presentation was given during the 
+		<a href="http://www.disco.unimib.it/go/5802603611614326614" >Artificial Intelligence course.</a> 
+		The slides (in Italian) can be found <a href="static/files/AI2013-14.pdf">here</a>.</p>
+		
+		<h5><span class="label label-info">November 15 2012</span></h5>
+		<p class="text-justify">
+		Small tutorial on <a href="http://openrefine.org/">Open Refine</a> (formerly <a href="http://code.google.com/p/google-refine/">Google Refine</a>) given during the 
+		<a href="http://www.disco.unimib.it/go/6438727046192864395">Artificial Intelligence course</a>. The slides (in Italian) can be found 
+		<a href="http://ai12-disco.appspot.com/">here</a>.</p>
+		<h3>Other Resources</h3>
+		<ul class="list-unstyled">
+  			<li><a href="static/files/eswc-summer-school-2013.pdf">Poster</a> presented at the <a href="http://summerschool2013.eswc-conferences.org/">3rd ESWC Summer School</a>.</li>
+			<li><a href="static/files/phd-presentation-first-year.pdf">Slides</a> for my first year Ph.D. presentation.</li>
+		</ul>
+  	</div>
+  	<div class="col-xs-4 col-md-3 text-right">
+  		<img class="img-responsive img-thumbnail" alt="My Picture" src="static/img/riccardo-porrini.png"/>
+  		<h3>Contacts</h3>
+  		<ul class="list-unstyled">
+  		<li><a href="mailto:riccardo.porrini@trovaprezzi.it">riccardo.porrini@trovaprezzi.it</a></li>
+  		<li><a href="mailto:riccardo.porrini@disco.unimib.it">riccardo.porrini@disco.unimib.it</a></li>
+  		</ul>
+		<h3>Curriculum Vitae</h3>
+		<ul class="list-unstyled">
+		<li><a href="static/files/Riccardo-Porrini-CV-it.pdf">Italian</a> | <a href="static/files/Riccardo-Porrini-CV-en.pdf">English</a></li>
+  		<li><a href="http://www.linkedin.com/in/riccardoporrini">
+		<img src="http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_linkedin_92x22.png" alt="My LinkedIn Profile"/>
+		</a></li>
+		</ul>
+  	</div>
+	</div>
+	<div class="footer text-center">
+		<ul class="list-inline">
+		<li>Created by <a href="http://github.com/rporrini/">Riccardo Porrini</a></li> 
+		<li><a href="https://github.com/rporrini/rporrini.info"><img src="static/img/github-mark-32px.png"></a></li>
+		<li><a href="https://travis-ci.org/rporrini/rporrini.info"><img src="https://travis-ci.org/rporrini/rporrini.info.svg?branch=master"></a></li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="http://autocomplete.shoppydoo.com/configuration/?merchant=test&amp;input=tryit&amp;"></script>
 </body>
+</html>
