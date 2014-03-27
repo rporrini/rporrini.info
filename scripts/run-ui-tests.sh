@@ -8,4 +8,3 @@ cd ..
 echo "****** Running ui tests ******"
 
 ./node_modules/karma/bin/karma start ./test/ui/karma.conf.js
-git 
