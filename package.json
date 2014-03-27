@@ -6,6 +6,10 @@
     "npm": "1.3.x"
   },
   "scripts": {
-    "test": "scripts/run-tests.sh unit"
+    "test": "scripts/run-backend-tests.sh unit && scripts/run-ui-tests.sh && echo '****** Done ******'"
+  },
+  "devDependencies": {
+    "karma-mocha": "~0.1.3",
+    "karma-firefox-launcher": "~0.1.3"
   }
 }
