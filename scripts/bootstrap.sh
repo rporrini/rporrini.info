@@ -30,7 +30,7 @@ fi
 
 relative_path=`dirname $0`
 directory=`cd $relative_path;pwd`
-cd $directory
+cd $directory/..
 
-./test.sh
+npm test
 
