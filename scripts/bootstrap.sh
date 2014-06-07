@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-command -v node
-if [ $? -eq 1 ] 
-then 
+if ! command -v node ; then
 	echo 'Installing Node'
 	echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
 	. ~/.bashrc
@@ -14,16 +12,12 @@ then
 	make install
 fi
 
-command -v npm
-if [ $? -eq 1 ] 
-then
+if ! command -v npm ; then
 	echo 'Installing NPM'
 	curl https://npmjs.org/install.sh | sh
 fi
 
-command -v heroku
-if [ $? -eq 1 ]
-then
+if ! command -v heroku ; then
 	echo 'Installing Heroku-Toolbelt'
 	curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
 fi
