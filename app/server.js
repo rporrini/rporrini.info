@@ -16,7 +16,7 @@ app.use('/static', express.static(file.pathOf('assets')))
 	})
 	.get('/posts/:id', function(req, res){
 		try{
-			res.send(posts.byId(file.pathOf('posts/' + req.params.id)).get(fs));
+			res.render('post', posts.byId(file.pathOf('posts/' + req.params.id)).get(fs));
 		}catch (e) {
 			res.send(404);
 		}
