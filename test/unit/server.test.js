@@ -3,6 +3,7 @@ var server = require('../../app/server');
 var file = require('../../app/filesystem');
 var fs = require('fs');
 var should = require('should');
+var testdoubles = require('./testdoubles');
 
 describe('route', function(){
 	describe('/static', function(){
@@ -29,6 +30,26 @@ describe('route', function(){
 		it('should be accessible', function(done){
 			request(server.app)
 				.get('/')
+				.expect(200, done);
+		});
+	});
+	describe('/posts', function(){
+		it('should return 404 when asked for a not existing post', function(done){
+			request(server.app)
+				.get('/posts/a-not-existing-post')
+				.expect(404, done);
+		});
+		
+		before(function(){
+			file.write('posts/my-beautiful-post', '{}', fs);
+		});
+		after(function(){
+			file.remove('posts/my-beautiful-post', fs);
+		});
+		
+		it('should return 200 when asked for an existing post', function(done){
+			request(server.app)
+				.get('/posts/my-beautiful-post')
 				.expect(200, done);
 		});
 	});

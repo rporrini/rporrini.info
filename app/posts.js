@@ -5,7 +5,7 @@ var Post = function(id){
 	this.id = id;
 	
 	var get = function(fileSystem){
-		return file.contentOf(id, fileSystem);
+		return JSON.parse(file.contentOf(id, fileSystem));
 	};
 	
 	return {
