@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+	head
+		block title
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(href="static/css/bootstrap.min.css" rel="stylesheet")
+		link(href="static/css/style.css" rel="stylesheet")
+		script(src="static/js/bootstrap.min.js")
+	body.container
+		div.page-header
+			h1 Riccardo Porrini
+	div.row
+		div(class="col-xs-14 col-md-9")
+			block page-content
+			
+		div(class="col-xs-4 col-md-3 text-right")
+			img(class="img-responsive img-thumbnail" alt="My Picture" src="static/img/riccardo-porrini.png")
+			h3 Contacts
+			ul(class="list-unstyled")
+				li
+					a(href="mailto:riccardo.porrini@trovaprezzi.it") riccardo.porrini@trovaprezzi.it
+				li
+					a(href="mailto:riccardo.porrini@disco.unimib.it") riccardo.porrini@disco.unimib.it
+			h3 Curriculum Vitae
+			ul(class="list-unstyled")
+				li
+					a(href="static/files/Riccardo-Porrini-CV-it.pdf") Italian 
+					| | 
+					a(href="static/files/Riccardo-Porrini-CV-en.pdf") English
+				li
+					a(href="http://www.linkedin.com/in/riccardoporrini")
+						img(src="http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_linkedin_92x22.png" alt="My LinkedIn Profile")
+	div(class="footer text-center")
+		ul(class="list-inline")
+			li Created by 
+				a(href="http://github.com/rporrini/") Riccardo Porrini 
+			li
+				a(href="https://github.com/rporrini/rporrini.info")
+					img(src="static/img/github-mark-32px.png")
+			li
+				a(href="https://travis-ci.org/rporrini/rporrini.info")
+					img(src="https://travis-ci.org/rporrini/rporrini.info.svg?branch=master")
