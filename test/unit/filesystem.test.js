@@ -26,9 +26,24 @@ describe('filesystem', function(){
 			writer.path.should.endWith('app/file');
 		});
 	});
+	describe('contentOf', function(){
+		it('should return the content of the file when it exists on the file system', function(){
+			var fileName = 'file.txt';
+			
+			var writer = new Writer();
+			writer.writeFile(fileName, 'the content');
+			
+			file.contentOf(fileName, writer).should.equal('the content');			
+		});
+	});
 });
 
 function Writer(){};
+Writer.prototype.readFileSync = function(path, encoding, callback){
+	if(path == this.path){
+		return this.content;
+	}
+};
 Writer.prototype.writeFile = function(path, content){
 	this.path = path;
 	this.content = content;
