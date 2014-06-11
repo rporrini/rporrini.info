@@ -1,5 +1,6 @@
 var should = require('should');
 var file = require('../../app/filesystem');
+var testdoubles = require('./testdoubles');
 
 describe('filesystem', function(){
 	describe('pathOf', function(){
@@ -9,7 +10,7 @@ describe('filesystem', function(){
 	});
 	describe('write', function(){
 		it('should write the file in the app directory', function(){
-			var writer = new Writer();
+			var writer = testdoubles.writer();
 			
 			file.write('file', 'content', writer);
 			
@@ -19,7 +20,7 @@ describe('filesystem', function(){
 	});
 	describe('delete', function(){
 		it('should delete a file in the app directory', function(){
-			var writer = new Writer();
+			var writer = testdoubles.writer();
 			
 			file.remove('file', writer);
 			
@@ -30,24 +31,9 @@ describe('filesystem', function(){
 		it('should return the content of the file when it exists on the file system', function(){
 			var fileName = 'file.txt';
 			
-			var writer = new Writer();
-			writer.writeFile(fileName, 'the content');
+			var writer = testdoubles.writer().writeFile(fileName, 'the content');
 			
 			file.contentOf(fileName, writer).should.equal('the content');			
 		});
 	});
 });
-
-function Writer(){};
-Writer.prototype.readFileSync = function(path, encoding, callback){
-	if(path == this.path){
-		return this.content;
-	}
-};
-Writer.prototype.writeFile = function(path, content){
-	this.path = path;
-	this.content = content;
-};
-Writer.prototype.unlink = function(path){
-	this.path = path;
-};
