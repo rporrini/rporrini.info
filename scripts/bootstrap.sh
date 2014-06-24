@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 if ! command -v node ; then
 	echo 'Installing Node'
 	echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
@@ -14,7 +14,7 @@ fi
 
 if ! command -v npm ; then
 	echo 'Installing NPM'
-	curl https://npmjs.org/install.sh | sh
+	curl -L https://npmjs.org/install.sh | sh
 fi
 
 if ! command -v heroku ; then
@@ -26,5 +26,6 @@ relative_path=`dirname $0`
 directory=`cd $relative_path;pwd`
 cd $directory/..
 
+npm install
 npm test
 
