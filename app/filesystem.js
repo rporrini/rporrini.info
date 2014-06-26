@@ -7,6 +7,3 @@ exports.write = function(subpath, content, writer){
 exports.remove = function(subpath, writer){
 	writer.unlink(pathOf(subpath));
 };
-exports.contentOf = function(path, writer){
-	return writer.readFileSync(path, {encoding: 'utf-8'}, function(err,data){});
-};

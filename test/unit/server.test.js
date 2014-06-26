@@ -41,10 +41,10 @@ describe('route', function(){
 		});
 		
 		before(function(){
-			file.write('posts/my-beautiful-post', '{}', fs);
+			file.write('posts/my-beautiful-post.jade', '{}', fs);
 		});
 		after(function(){
-			file.remove('posts/my-beautiful-post', fs);
+			file.remove('posts/my-beautiful-post.jade', fs);
 		});
 		
 		it('should return 200 when asked for an existing post', function(done){

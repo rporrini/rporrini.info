@@ -27,13 +27,4 @@ describe('filesystem', function(){
 			writer.path.should.endWith('app/file');
 		});
 	});
-	describe('contentOf', function(){
-		it('should return the content of the file when it exists on the file system', function(){
-			var fileName = 'file.txt';
-			
-			var writer = testdoubles.writer().writeFile(fileName, 'the content');
-			
-			file.contentOf(fileName, writer).should.equal('the content');			
-		});
-	});
 });

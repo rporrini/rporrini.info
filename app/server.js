@@ -1,7 +1,6 @@
 var express = require('express');
 var file = require('./filesystem');
 var fs = require('fs');
-var posts = require('./posts');
 
 var app = express();
 app.set('views', file.pathOf('views'));
@@ -15,10 +14,13 @@ app.use('/static', express.static(file.pathOf('assets')))
 		res.render('index', {});
 	})
 	.get('/posts/:id', function(req, res){
-		try{
-			res.render('post', posts.byId(file.pathOf('posts/' + req.params.id)).get(fs));
-		}catch (e) {
-			res.send(404);
-		}
+		res.render('../posts/' + req.params.id, {});
+	})
+	.get('*', function(req, res){
+		res.send(404, 'There is nothing here!');
 	});
+app.use(function(err, req, res, next){
+		res.send(404, 'There is nothing here!');
+	});
+
 module.exports.app = app;

@@ -2,9 +2,10 @@ extends layout
 
 block title
 	title 
-		| Riccardo Porrini
-		= ' - ' + title
+		| Riccardo Porrini - 
+		block post-title
 	
 block page-content
-	h3= title
-	p= content
+	h3
+		block post-title
+	block post-content
