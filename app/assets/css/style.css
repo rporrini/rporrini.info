@@ -5,6 +5,10 @@
     margin-top: 40px;
 }
 
+.highlight{
+	color: #777777;
+}
+
 #bibbase_header {
 	display: none;
 }

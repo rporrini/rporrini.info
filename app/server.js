@@ -1,6 +1,9 @@
 var express = require('express');
 var file = require('./filesystem');
 var fs = require('fs');
+var send404 = function(res){
+	res.send(404, 'There is nothing here!');
+};
 
 var app = express();
 app.set('views', file.pathOf('views'));
@@ -11,16 +14,16 @@ app.use('/static', express.static(file.pathOf('assets')))
 	   	res.send('OK');
 	})
 	.get('/', function(req, res){
-		res.render('index', {});
+		res.render('home', {});
 	})
 	.get('/posts/:id', function(req, res){
 		res.render('../posts/' + req.params.id, {});
 	})
 	.get('*', function(req, res){
-		res.send(404, 'There is nothing here!');
+		send404(res);
 	});
 app.use(function(err, req, res, next){
-		res.send(404, 'There is nothing here!');
+		send404(res);
 	});
 
 module.exports.app = app;
