@@ -2,19 +2,7 @@
 set -e
 if ! command -v node ; then
 	echo 'Installing Node'
-	echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
-	. ~/.bashrc
-	mkdir ~/local
-	mkdir ~/node-latest-install
-	cd ~/node-latest-install
-	curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
-	./configure --prefix=~/local
-	make install
-fi
-
-if ! command -v npm ; then
-	echo 'Installing NPM'
-	curl -L https://npmjs.org/install.sh | sh
+	sudo apt-get install nodejs nodejs-legacy npm
 fi
 
 if ! command -v heroku ; then
