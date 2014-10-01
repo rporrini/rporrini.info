@@ -5,6 +5,10 @@
     "node": "0.10.x",
     "npm": "1.3.x"
   },
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/rporrini/rporrini.info"
+  },
   "scripts": {
     "test": "scripts/run-backend-tests.sh unit && scripts/run-ui-tests.sh && echo '****** Done ******'"
   },
