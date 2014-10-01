@@ -24,21 +24,4 @@ var Writer = function(){
     };
 };
 
-var Reader = function(){
-	
-	var withLine = function(line){
-		this.line = line;
-	}
-	
-	var firstLine = function(){
-		return this.line;
-	}
-	
-	return {
-		firstLine: firstLine,
-		withLine: withLine
-	}
-}
-
 exports.writer = Writer;
-exports.reader = Reader;

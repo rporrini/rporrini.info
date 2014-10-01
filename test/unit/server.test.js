@@ -33,23 +33,10 @@ describe('route', function(){
 				.expect(200, done);
 		});
 	});
-	describe('/posts', function(){
-		it('should return 404 when asked for a not existing post', function(done){
+	describe('blog', function(){
+		it('should be accessible', function(done){
 			request(server.app)
-				.get('/posts/a-not-existing-post')
-				.expect(404, done);
-		});
-		
-		before(function(){
-			file.write('posts/my-beautiful-post.jade', '{}', fs);
-		});
-		after(function(){
-			file.remove('posts/my-beautiful-post.jade', fs);
-		});
-		
-		it('should return 200 when asked for an existing post', function(done){
-			request(server.app)
-				.get('/posts/my-beautiful-post')
+				.get('/blog')
 				.expect(200, done);
 		});
 	});
