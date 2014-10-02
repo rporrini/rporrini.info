@@ -1,15 +1,16 @@
 extends layout
 
 block title
-	title 
-		| Riccardo Porrini - 
-		block post-title
-	
+	title
+		| Riccardo Porrini - #{post.title}
+
 block page-content
-	h3 
-		block post-title
-	div(class="highlight")
-		block post-date
+	div.post
+		h3
+			a(href=post.url)
+				= post.title
+		div(class="highlight")
+			span.date #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
 	br
-	p
-		block post-content
+	div.post.content
+		!= post.content

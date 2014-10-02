@@ -14,7 +14,12 @@ describe('application', function(){
 	});
 	describe('first post', function(){
 		it('should be accessible', function(done){
-			isAccessible('/posts/hello-world', done);
+			isAccessible('/blog/post/hello-world', done);
+		});
+	});
+	describe('/blog', function(){
+		it('should be accessible', function(done){
+			isAccessible('/blog', done);
 		});
 	});
 });

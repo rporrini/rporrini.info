@@ -17,7 +17,7 @@ app.set('view engine', 'jade');
 poet.addRoute('/blog/post/:post', function (req, res) {
 	  var post = poet.helpers.getPost(req.params.post);
 	  if (post) {
-	    res.render('post-post', { post: post }); 
+	    res.render('post', { post: post }); 
 	  } else {
 		  send404(res);
 	  }
@@ -31,7 +31,7 @@ app.use('/static', express.static(file.pathOf('assets')))
 		res.render('home', {});
 	})
 	.get('/blog', function(req, res){
-		res.render('index', {});
+		res.render('blog', {});
 	})
 	.get('*', function(req, res){
 		send404(res);
