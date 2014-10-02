@@ -40,4 +40,17 @@ describe('route', function(){
 				.expect(200, done);
 		});
 	});
+	describe('post', function(){
+		before(function(){
+			file.write('_posts/post.md', '{{{"title" : "The beautiful Post", "date" : "7-30-2012"}}}', fs);
+		});
+		after(function(){
+			file.remove('_posts/post.md', fs);
+		});
+		it('should be accessible for an existing post', function(done){
+			request(server.app)
+				.get('/blog/post/the-beautiful-post')
+				.expect(200, done);
+		});
+	});
 });
