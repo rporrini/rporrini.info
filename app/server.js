@@ -8,9 +8,9 @@ var send404 = function(res){
 };
 
 var app = express();
-var poet = Poet(app, {posts: file.pathOf('_posts')});
+var poet = Poet(app, {posts: file.pathOf('posts')});
 
-poet.init();
+poet.watch().init();
 app.set('views', file.pathOf('views'));
 app.set('view engine', 'jade');
 
