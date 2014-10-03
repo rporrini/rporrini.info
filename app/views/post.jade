@@ -5,12 +5,7 @@ block title
 		| Riccardo Porrini - #{post.title}
 
 block page-content
-	div.post
-		h3
-			a(href=post.url)
-				= post.title
-		div(class="highlight")
-			span.date #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
+	include post-description
 	br
-	div.post.content
+	div
 		!= post.content

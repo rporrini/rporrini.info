@@ -40,20 +40,45 @@ describe('route', function(){
 				.expect(200, done);
 		});
 	});
-	describe('post', function(){
+	describe('existing posts', function(){
 		before(function(){
 			file.write('posts/post.md', '{{{"title" : "The Beautiful Post", "date" : "7-30-2012"}}}', fs);
 		});
 		after(function(){
 			file.remove('posts/post.md', fs);
 		});
-		it('should be accessible for an existing post', function(done){
+		it('should be accessible', function(done){
 			setTimeout(function() {
 				request(server.app)
 					.get('/blog/post/the-beautiful-post')
 					.expect(200, done);
 			}, 5);
-			
 		});
+	});
+	describe('hidden posts', function(){
+		before(function(){
+			file.write('posts/post-hidden.md', '{{{"title" : "The Hidden Post", "date" : "7-30-2012"}}}', fs);
+		});
+		after(function(){
+			file.remove('posts/post-hidden.md', fs);
+		});
+		it('should be accessible', function(done){
+			setTimeout(function() {
+				request(server.app)
+					.get('/blog/post/the-hidden-post')
+					.expect(200, done);
+			}, 50);	
+		});
+//		it('should not be listed', function(done){
+//			setTimeout(function() {
+//				request(server.app)
+//					.get('/blog')
+//					.expect(200)
+//					.end(function(err,res) {
+//						res.text.should.match('Hidden');
+//						done();
+//					});
+//			}, 5000);	
+//		});
 	});
 });
