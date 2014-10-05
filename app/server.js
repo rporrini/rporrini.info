@@ -31,7 +31,8 @@ app.use('/static', express.static(file.pathOf('assets')))
 		res.render('home', {});
 	})
 	.get('/blog', function(req, res){
-		res.render('blog', {});
+		var posts = poet.helpers.getPosts(0, 100)
+		res.render('blog', { posts: posts });
 	})
 	.get('*', function(req, res){
 		send404(res);
