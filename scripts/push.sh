@@ -3,7 +3,11 @@ set -e
 
 relative_path=`dirname $0`
 directory=`cd $relative_path;pwd`
-cd $directory
+cd $directory/..
+
+npm test
+
+echo "****** pushing to $1 environment ******"
 
 case $1 in
 	development)

@@ -5,6 +5,6 @@ directory=`cd $relative_path;pwd`
 cd $directory
 cd ..
 
-echo "****** Running $1 tests ******"
+echo "****** running $1 tests ******"
 
 node_modules/.bin/mocha --reporter list test/$1 --timeout 60000

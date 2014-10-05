@@ -57,28 +57,17 @@ describe('route', function(){
 	});
 	describe('hidden posts', function(){
 		before(function(){
-			file.write('posts/post-hidden.md', '{{{"title" : "The Hidden Post", "date" : "7-30-2012"}}}', fs);
+			file.write('hidden-posts/post.jade', '{{{"title" : "The Hidden Post", "date" : "7-30-2012"}}}', fs);
 		});
 		after(function(){
-			file.remove('posts/post-hidden.md', fs);
+			file.remove('hidden-posts/post.jade', fs);
 		});
 		it('should be accessible', function(done){
 			setTimeout(function() {
 				request(server.app)
-					.get('/blog/post/the-hidden-post')
+					.get('/hidden-blog/post/the-hidden-post')
 					.expect(200, done);
-			}, 50);	
+			}, 5);	
 		});
-//		it('should not be listed', function(done){
-//			setTimeout(function() {
-//				request(server.app)
-//					.get('/blog')
-//					.expect(200)
-//					.end(function(err,res) {
-//						res.text.should.match('Hidden');
-//						done();
-//					});
-//			}, 5000);	
-//		});
 	});
 });

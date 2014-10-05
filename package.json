@@ -10,7 +10,7 @@
 	  "url": "git://github.com/rporrini/rporrini.info"
   },
   "scripts": {
-    "test": "scripts/run-backend-tests.sh unit && scripts/run-ui-tests.sh && echo '****** Done ******'"
+    "test": "scripts/run-backend-tests.sh unit && scripts/run-ui-tests.sh && echo '****** done ******'"
   },
   "dependencies": {
     "express": "4.4.1",

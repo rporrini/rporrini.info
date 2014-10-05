@@ -8,14 +8,27 @@ var send404 = function(res){
 };
 
 var app = express();
-var poet = Poet(app, {posts: file.pathOf('posts')});
 
+var poet = Poet(app, {posts: file.pathOf('posts')});
+var hidden_poet = Poet(app, {posts: file.pathOf('hidden-posts')});
+
+hidden_poet.watch().init();
 poet.watch().init();
+
 app.set('views', file.pathOf('views'));
 app.set('view engine', 'jade');
 
 poet.addRoute('/blog/post/:post', function (req, res) {
 	  var post = poet.helpers.getPost(req.params.post);
+	  if (post) {
+	    res.render('post', { post: post }); 
+	  } else {
+		  send404(res);
+	  }
+});
+
+hidden_poet.addRoute('/hidden-blog/post/:post', function (req, res) {
+	  var post = hidden_poet.helpers.getPost(req.params.post);
 	  if (post) {
 	    res.render('post', { post: post }); 
 	  } else {
@@ -32,6 +45,10 @@ app.use('/static', express.static(file.pathOf('assets')))
 	})
 	.get('/blog', function(req, res){
 		var posts = poet.helpers.getPosts(0, 100)
+		res.render('blog', { posts: posts });
+	})
+	.get('/hidden-blog', function(req, res){
+		var posts = hidden_poet.helpers.getPosts(0, 100)
 		res.render('blog', { posts: posts });
 	})
 	.get('*', function(req, res){
