@@ -7,44 +7,46 @@ html(lang="en")
 		link(href="/static/css/bootstrap.min.css" rel="stylesheet")
 		link(href="/static/css/style.css" rel="stylesheet")
 		script(src="/static/js/bootstrap.min.js")
-	body.container
+	body.container-fluid
 		div.page-header
 			h1 Riccardo Porrini
-	div.row
-		div(class="col-xs-14 col-md-9")
-			block page-content
-			
-		div(class="col-xs-4 col-md-3 text-right")
-			img(class="img-responsive img-thumbnail" alt="My Picture" src="/static/img/riccardo-porrini.png")
-			h3 Contacts
-			ul(class="list-unstyled")
+		div.row
+			div(class="col-xs-4 col-md-2")
+				ul(class="nav nav-pills nav-stacked red")
+					block navigation
+			div(class="col-xs-12 col-md-7")
+				block page-content
+			div(class="col-xs-4 col-md-3 text-right")
+				img(class="img-responsive img-thumbnail" alt="My Picture" src="/static/img/riccardo-porrini.png")
+				h3 Contacts
+				ul(class="list-unstyled")
+					li
+						a(href="mailto:riccardo.porrini@trovaprezzi.it") riccardo.porrini@trovaprezzi.it
+					li
+						a(href="mailto:riccardo.porrini@disco.unimib.it") riccardo.porrini@disco.unimib.it
+				h3 Curriculum Vitae
+				ul(class="list-unstyled")
+					li
+						a(href="/static/files/Riccardo-Porrini-CV-it.pdf") Italian
+						|  | 
+						a(href="/static/files/Riccardo-Porrini-CV-en.pdf") English
+					li
+						a(href="http://www.linkedin.com/in/riccardoporrini")
+							img(src="http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_linkedin_92x22.png" alt="My LinkedIn Profile")
+		div(class="footer highlight text-center")
+			ul(class="list-inline")
+				li Created by 
+					a(href="http://github.com/rporrini/") Riccardo Porrini
 				li
-					a(href="mailto:riccardo.porrini@trovaprezzi.it") riccardo.porrini@trovaprezzi.it
+					a(href="https://github.com/rporrini/rporrini.info")
+						img(src="/static/img/github-mark-32px.png")
 				li
-					a(href="mailto:riccardo.porrini@disco.unimib.it") riccardo.porrini@disco.unimib.it
-			h3 Curriculum Vitae
-			ul(class="list-unstyled")
-				li
-					a(href="/static/files/Riccardo-Porrini-CV-it.pdf") Italian
-					|  | 
-					a(href="/static/files/Riccardo-Porrini-CV-en.pdf") English
-				li
-					a(href="http://www.linkedin.com/in/riccardoporrini")
-						img(src="http://s.c.lnkd.licdn.com/scds/common/u/img/logos/logo_linkedin_92x22.png" alt="My LinkedIn Profile")
-	div(class="footer highlight text-center")
-		ul(class="list-inline")
-			li Created by 
-				a(href="http://github.com/rporrini/") Riccardo Porrini
-			li
-				a(href="https://github.com/rporrini/rporrini.info")
-					img(src="/static/img/github-mark-32px.png")
-			li
-				a(href="https://travis-ci.org/rporrini/rporrini.info")
-					img(src="https://travis-ci.org/rporrini/rporrini.info.svg?branch=master")
-	script
-		|(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		|(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		|m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		|})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		|ga('create', 'UA-28347701-3', 'rporrini.info');
-		|ga('send', 'pageview');
+					a(href="https://travis-ci.org/rporrini/rporrini.info")
+						img(src="https://travis-ci.org/rporrini/rporrini.info.svg?branch=master")
+		script
+			|(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			|(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			|m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			|})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			|ga('create', 'UA-28347701-3', 'rporrini.info');
+			|ga('send', 'pageview');
