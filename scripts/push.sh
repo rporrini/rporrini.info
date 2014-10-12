@@ -15,7 +15,7 @@ case $1 in
 		;;
 	production)
 		git push heroku master
-		./run-backend-tests.sh production
+		./scripts/run-backend-tests.sh production
 		;;
 esac
 
