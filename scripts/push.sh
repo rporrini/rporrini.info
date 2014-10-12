@@ -13,6 +13,9 @@ case $1 in
 	development)
 		git push origin master
 		;;
+	staging)
+		git push staging master
+		;;
 	production)
 		git push heroku master
 		./scripts/run-backend-tests.sh production

@@ -13,6 +13,7 @@ if ! command -v heroku ; then
 	curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
 	cd $directory/..
 	heroku git:remote -a rporrini
+	heroku git:remote -r staging -a rporrini-staging
 	heroku keys:add
 fi
 if ! command -v firefox ; then
