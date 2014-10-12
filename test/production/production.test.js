@@ -26,7 +26,7 @@ describe('application', function(){
 
 function isAccessible(path, done){
 	request
-		.get('http://www.rporrini.info' + path)
+		.get('http://' + process.env.ENVIRONMENT + path)
 		.end(function(res){
 			res.status.should.equal(200);
 			done();

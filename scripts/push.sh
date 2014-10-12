@@ -15,10 +15,11 @@ case $1 in
 		;;
 	staging)
 		git push staging master
+		./scripts/run-backend-tests.sh production rporrini-staging.herokuapp.com
 		;;
 	production)
 		git push heroku master
-		./scripts/run-backend-tests.sh production
+		./scripts/run-backend-tests.sh production rporrini.info
 		;;
 esac
 
