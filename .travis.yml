@@ -1,12 +1,15 @@
 language: node_js
 node_js:
- - "0.10"
+- '0.10'
 before_script:
- - export DISPLAY=:99.0
- - sh -e /etc/init.d/xvfb start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 deploy:
- provider: heroku
- api_key: ...G341k6UxZ5i2DpUxnEQC6aRhDMWYo/MgAa7t+Bwo49w6AjWsOr2AVKOf6jRWSH4CZUyPqTGEr8lSapk/v//FhwRjY1sd2aqLAY2VEO/E6VSFANfvD1Rr4PWcpCMECfkWC1aaA8T8rgtiffpaoXO/jql/qgszA5nyA8tLBdnCOGs=
- app: rporrini-staging
+  provider: heroku
+  api_key:
+    secure: YY7y1ntBn7AFo+41VtrlHV3SbnAAh2zvmEWuqpJahBTqc2ZbWst+9fQEFKQRVsblgf+tAOA3PMqdAA5o7cRh3tul/eiAy7fjMpqvaVKj7fgtBdFOgtzLlW27hmlucJnO0fvMFoycqa6KXtal/wy2roIyDAoMRBxJlxQzEpcqSNI=
+  app: rporrini-staging
+  on:
+    repo: rporrini/rporrini.info
 after_script:
- - scripts/run-backend-tests.sh production rporrini-staging.herokuapp.com
+- scripts/run-backend-tests.sh production rporrini-staging.herokuapp.com
