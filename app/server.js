@@ -30,7 +30,7 @@ poet.addRoute('/blog/post/:post', function (req, res) {
 hidden_poet.addRoute('/hidden-blog/post/:post', function (req, res) {
 	  var post = hidden_poet.helpers.getPost(req.params.post);
 	  if (post) {
-	    res.render('post', { post: post }); 
+	    res.render('hidden-post', { post: post }); 
 	  } else {
 		  send404(res);
 	  }
