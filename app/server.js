@@ -2,6 +2,7 @@ var express = require('express');
 var file = require('./filesystem');
 var fs = require('fs');
 var Poet = require('poet');
+var blog = require('./blog');
 
 var send404 = function(res){
 	res.send(404, 'There is nothing here!');
@@ -21,7 +22,7 @@ app.set('view engine', 'jade');
 poet.addRoute('/blog/post/:post', function (req, res) {
 	  var post = poet.helpers.getPost(req.params.post);
 	  if (post) {
-	    res.render('post', { post: post }); 
+	    res.render('post', { post: blog.post(post) }); 
 	  } else {
 		  send404(res);
 	  }
@@ -30,7 +31,7 @@ poet.addRoute('/blog/post/:post', function (req, res) {
 hidden_poet.addRoute('/hidden-blog/post/:post', function (req, res) {
 	  var post = hidden_poet.helpers.getPost(req.params.post);
 	  if (post) {
-	    res.render('hidden-post', { post: post }); 
+	    res.render('hidden-post', { post: blog.post(post) }); 
 	  } else {
 		  send404(res);
 	  }
@@ -45,11 +46,11 @@ app.use('/static', express.static(file.pathOf('assets')))
 	})
 	.get('/blog', function(req, res){
 		var posts = poet.helpers.getPosts(0, 100)
-		res.render('blog', { posts: posts });
+		res.render('blog', { posts: blog.posts(posts) });
 	})
 	.get('/hidden-blog', function(req, res){
 		var posts = hidden_poet.helpers.getPosts(0, 100)
-		res.render('blog', { posts: posts });
+		res.render('blog', { posts: blog.posts(posts) });
 	})
 	.get('*', function(req, res){
 		send404(res);
