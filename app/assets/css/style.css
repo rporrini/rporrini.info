@@ -12,3 +12,26 @@
 #bibbase_header {
 	display: none;
 }
+
+.navigation{
+	text-align: right;
+}
+
+.navigation li{
+	font-size: larger;
+	padding: 8px;
+}
+
+.navigation a{
+	text-decoration: none;
+	color: #333;
+}
+
+.navigation a:hover{
+	text-decoration: underline;
+}
+
+.navigation li.active{
+	color: #428bca;
+	border-right: 2px solid;
+}
