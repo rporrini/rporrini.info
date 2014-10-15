@@ -11,5 +11,6 @@ deploy:
   app: rporrini-staging
   on:
     repo: rporrini/rporrini.info
-after_script:
+  strategy: git
+after_deploy:
 - scripts/run-backend-tests.sh production rporrini-staging.herokuapp.com
