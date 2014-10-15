@@ -3,6 +3,7 @@ var file = require('./filesystem');
 var fs = require('fs');
 var Poet = require('poet');
 var blog = require('./blog');
+var git = require('git-rev');
 
 var send404 = function(res){
 	res.send(404, 'There is nothing here!');
@@ -37,7 +38,13 @@ hidden_poet.addRoute('/hidden-blog/post/:post', function (req, res) {
 	  }
 });
 
-app.use('/static', express.static(file.pathOf('assets')))
+app.use(function(req, res, next) {
+		git.long(function (str) {
+			res.header('X-Commit', str);
+			next();
+		})
+	})
+	.use('/static', express.static(file.pathOf('assets')))
 	.get('/alive', function(req, res){
 	   	res.send('OK');
 	})
