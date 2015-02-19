@@ -26,6 +26,13 @@ describe('route', function(){
 				.expect('OK', done);
 		});
 	});
+	describe('a not existing page', function(){
+		it('should be not accessible', function(done){
+			request(server.app)
+				.get('/not-existing-page')
+				.expect(404, done);
+		});
+	});
 	describe('/', function(){
 		it('should be accessible', function(done){
 			request(server.app)
@@ -37,6 +44,13 @@ describe('route', function(){
 		it('should be accessible', function(done){
 			request(server.app)
 				.get('/blog')
+				.expect(200, done);
+		});
+	});
+	describe('hidden-blog', function(){
+		it('should be accessible', function(done){
+			request(server.app)
+				.get('/hidden-blog')
 				.expect(200, done);
 		});
 	});
@@ -54,6 +68,11 @@ describe('route', function(){
 					.expect(200, done);
 			}, 5);
 		});
+		it('should give 404 on not existing posts', function(done){
+			request(server.app)
+					.get('/blog/post/not-existing-post')
+					.expect(404, done);
+		});
 	});
 	describe('hidden posts', function(){
 		before(function(){
@@ -68,6 +87,11 @@ describe('route', function(){
 					.get('/hidden-blog/post/the-hidden-post')
 					.expect(200, done);
 			}, 5);	
+		});
+		it('should give 404 on not existing posts', function(done){
+			request(server.app)
+					.get('/hidden-blog/post/not-existing-post')
+					.expect(404, done);
 		});
 	});
 });
