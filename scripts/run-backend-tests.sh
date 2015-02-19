@@ -1,11 +1,17 @@
-#!/bin/sh
+#!/bin/bash
 
 relative_path=`dirname $0`
 directory=`cd $relative_path;pwd`
 cd $directory
 cd ..
 
-echo "****** running $1 tests on $2 ******"
+timeout='--timeout 60000'
+
+if [[ $2 == coverage ]]
+then
+	cover='./node_modules/istanbul/lib/cli.js cover'
+	timeout=''
+fi
 
 export ENVIRONMENT=$2
-node_modules/.bin/mocha --reporter list test/$1 --timeout 60000
+$cover ./node_modules/.bin/_mocha --report lcovonly test/$1 $timeout

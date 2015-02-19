@@ -5,7 +5,7 @@ module.exports = function(config) {
     files: [
       '*.js'
     ],
-    reporters: ['dots'],
+    reporters: ['list'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_ERROR,
