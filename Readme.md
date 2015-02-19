@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/rporrini/rporrini.info.svg?branch=master)](https://travis-ci.org/rporrini/rporrini.info) [![Coverage Status](https://coveralls.io/repos/rporrini/rporrini.info/badge.svg?branch=master)](https://coveralls.io/r/rporrini/rporrini.info?branch=master)
+[![Build Status](https://travis-ci.org/rporrini/rporrini.info.svg?branch=master)](https://travis-ci.org/rporrini/rporrini.info) [![Coverage Status](http://coveralls.io/repos/rporrini/rporrini.info/badge.svg?branch=master)](https://coveralls.io/r/rporrini/rporrini.info?branch=master)
