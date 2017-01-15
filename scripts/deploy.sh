@@ -10,10 +10,10 @@ echo "****** deploying to $1 environment ******"
 case $1 in
 	staging)
 		git push staging master
-		./scripts/run-backend-tests.sh production stage.rporrini.info
+		./scripts/test.sh production stage.rporrini.info
 		;;
 	production)
 		git push heroku master
-		./scripts/run-backend-tests.sh production rporrini.info
+		./scripts/test.sh production rporrini.info
 		;;
 esac

@@ -2,9 +2,6 @@ sudo: false
 language: node_js
 node_js:
 - '6.9.4'
-before_script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
 after_script:
 - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 deploy:
@@ -16,4 +13,4 @@ deploy:
     repo: rporrini/rporrini.info
   strategy: git
 after_deploy:
-- scripts/test.sh production stage.rporrini.info
+- scripts/run-backend-tests.sh production stage.rporrini.info
