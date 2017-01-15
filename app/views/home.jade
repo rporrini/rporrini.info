@@ -1,107 +1,105 @@
 extends layout
 
 block navigation
-	li.active
-		a(href="#") About Me
-	li
-		a(href="/blog") Blog
+    li.active
+        a(href="#") About Me
+    li
+        a(href="/blog") Blog
 
 block title
-	title Riccardo Porrini's Personal Page
+    title Riccardo Porrini's Personal Page
 
 block page-content
-	p.text-justify
-		| I am a Software Developer at
-		a(href="http://www.7pixel.it") 7Pixel
-		|  and also a PhD Student at
-		a(href="http://www.disco.unimib.it") DISCo
-		|  (Dipartimento di Informatica, Sistemistica e Comunicazione),
-		a(href="http://www.unimib.it") University of Milano-Bicocca
-		|. My research interests include
-		a(href="http://en.wikipedia.org/wiki/Record_linkage") Entity Reconciliation
-		|,
-		a(href="http://en.wikipedia.org/wiki/Dataspaces") Dataspaces
-		|,
-		a(href="http://semanticweb.org/wiki/Main_Page") Semantic Web
-		|  and
-		a(href="http://www.w3.org/wiki/SweoIG/TaskForces/CommunityProjects/LinkingOpenData") Linked Data
-		|. As Software Developer I usually develop eCommerce enterprise software, more specifically in online product prices comparison.
-		| I have been working on the back-end software for
-		a(href="http://www.trovaprezzi.it") TrovaPrezzi
-		|, the major italian Online Price Comparison Engine.
-	h3 Projects
-	p
-		span(class="label label-primary") Facet Extraction
-	p.text-justify
-		|Categorization of instances in dataspaces is a difficult and time consuming task, usually performed by domain experts. I proposed a semi-automatic approach to the extraction of facets for the fine-grained categorization of instances in dataspaces. The approach leverages Taxonomy Layer Distance, a new metric based on structural analysis of source taxonomies, to support the identification of meaningful candidate facets. Once validated and refined by domain experts, the extracted facets provide a fine-grained classification of dataspace instances. I implemented and evaluated the approach in a real world dataspace in the eCommerce domain.
-	p
-		span(class="label label-primary") Result Oriented Autocomplete
-	p.text-justify
-		|An Autocompletion System based on a light-weight semi-structured data autocompletion matching algorithm, designed specifically for
-		|the eCommerce domain. The system has been developed during my MSc thesis. We also evaluated our approach to autocompletion
-		|in terms of effectiveness, and also defined a
-		a(href="/static/files/query_set_extended.zip") dataset
-		|  based on
-		a(href="http://dl.acm.org/citation.cfm?id=582418") graded relevance judgement
-		|.
-	h3 Teaching
-	p
-		span(class="label label-primary") September - December 2014
-	p.text-justify
-		|Student project supervision during the Data and Web Semantics course at
-		a(href="http://www.uic.edu/uic/") University of Illinois at Chicago
-		|.
-	p
-		span(class="label label-primary") October 23 2013
-	p.text-justify
-		|Presentation the project that I'm currently working on: facet extraction from taxonomies.
-		|The presentation was given during the
-		a(href="http://www.disco.unimib.it/go/5802603611614326614") Artificial Intelligence course at University of Milano-Bicocca
-		|. The slides (in Italian) can be found
-		a(href="static/files/AI2013-14.pdf") here
-		|.
-	p
-		span(class="label label-primary") November 15 2012
-	p(class="text-justify")
-		|Small tutorial on
-		a(href="http://openrefine.org/") Open Refine
-		|  (formerly
-		a(href="http://code.google.com/p/google-refine/") Google Refine
-		|) given during the
-		a(href="http://www.disco.unimib.it/go/6438727046192864395") Artificial Intelligence course at University of Milano-Bicocca
-		|. The slides (in Italian) can be found
-		a(href="http://ai12-disco.appspot.com/") here
-		|.
-	h3 Other Resources
-	ul(class="list-unstyled")
-		li
-			a(href="static/files/phd-presentation-third-year.pdf") Slides
-			|  for my third year Ph.D. presentation
-		li
-			a(href="static/files/ws-presentation.pdf") Slides
-			|  of the presentation gave at
-			a(href="http://daselab.cs.wright.edu/daselab.html") DaSe Lab, Wright State University
-		li
-			a(href="static/files/phd-presentation-second-year.pdf") Slides
-			|  for my second year Ph.D. presentation
-		li
-			a(href="static/files/extraction-caise2014.pdf") Presentation
-			|  of the
-			a(href="http://dx.doi.org/10.1007/978-3-319-07881-6_39") paper
-			|  on Facet Extraction, gave at the
-			a(href="http://delab.csd.auth.gr/caise2014/") CAiSE Conference
-		li
-			a(href="static/files/eswc-summer-school-2013.pdf") Poster
-			|presented at the
-			a(href="http://summerschool2013.eswc-conferences.org/") 3rd ESWC Summer School
-		li
-			a(href="static/files/phd-presentation-first-year.pdf") Slides
-			|  for my first year Ph.D. presentation
-	div(class="row")
-		div(class="col-md-8")
-			h3 Publications
-			ul(class="list-unstyled")
-				li
-					a(href="http://dblp.uni-trier.de/pers/hd/p/Porrini:Riccardo") DBLP
-				li
-					a(href="https://scholar.google.it/citations?user=mmGEmMwAAAAJ") Google Scholar
+    p.text-justify
+        | I am a Software Developer at 
+        a(href="http://www.7pixel.it") 7Pixel
+        |  and also a PhD Student at 
+        a(href="http://www.disco.unimib.it") DISCo
+        |  (Dipartimento di Informatica, Sistemistica e Comunicazione), 
+        a(href="http://www.unimib.it") University of Milano-Bicocca
+        |. My research interests include 
+        a(href="http://en.wikipedia.org/wiki/Record_linkage") Entity Reconciliation
+        |, 
+        a(href="http://en.wikipedia.org/wiki/Dataspaces") Dataspaces
+        |, 
+        a(href="http://semanticweb.org/wiki/Main_Page") Semantic Web
+        |  and 
+        a(href="http://www.w3.org/wiki/SweoIG/TaskForces/CommunityProjects/LinkingOpenData") Linked Data
+        |. As Software Developer I usually develop eCommerce enterprise software, more specifically in online product prices comparison.
+        | I have been working on the back-end software for 
+        a(href="http://www.trovaprezzi.it") TrovaPrezzi
+        |, the major italian Online Price Comparison Engine.
+    h3 Projects
+    p
+        span(class="label label-primary") Facet Extraction
+    p.text-justify
+        |Categorization of instances in dataspaces is a difficult and time consuming task, usually performed by domain experts. I proposed a semi-automatic approach to the extraction of facets for the fine-grained categorization of instances in dataspaces. The approach leverages Taxonomy Layer Distance, a new metric based on structural analysis of source taxonomies, to support the identification of meaningful candidate facets. Once validated and refined by domain experts, the extracted facets provide a fine-grained classification of dataspace instances. I implemented and evaluated the approach in a real world dataspace in the eCommerce domain.
+    p
+        span(class="label label-primary") Result Oriented Autocomplete
+    p.text-justify
+        |An Autocompletion System based on a light-weight semi-structured data autocompletion matching algorithm, designed specifically for
+        |the eCommerce domain. The system has been developed during my MSc thesis. We also evaluated our approach to autocompletion 
+        |in terms of effectiveness, and also defined a 
+        a(href="/static/files/query_set_extended.zip") dataset
+        |  based on 
+        a(href="http://dl.acm.org/citation.cfm?id=582418") graded relevance judgement
+        |.
+    h3 Teaching
+    p
+        span(class="label label-primary") September - December 2014
+    p.text-justify
+        |Student project supervision during the Data and Web Semantics course at 
+        a(href="http://www.uic.edu/uic/") University of Illinois at Chicago
+        |.
+    p
+        span(class="label label-primary") October 23 2013
+    p.text-justify
+        |Presentation the project that I'm currently working on: facet extraction from taxonomies. 
+        |The presentation was given during the 
+        a(href="http://www.disco.unimib.it/go/5802603611614326614") Artificial Intelligence course at University of Milano-Bicocca
+        |. The slides (in Italian) can be found 
+        a(href="static/files/AI2013-14.pdf") here
+        |.
+    p
+        span(class="label label-primary") November 15 2012
+    p(class="text-justify")
+        |Small tutorial on 
+        a(href="http://openrefine.org/") Open Refine
+        |  (formerly 
+        a(href="http://code.google.com/p/google-refine/") Google Refine
+        |) given during the 
+        a(href="http://www.disco.unimib.it/go/6438727046192864395") Artificial Intelligence course at University of Milano-Bicocca
+        |. The slides (in Italian) can be found 
+        a(href="http://ai12-disco.appspot.com/") here
+        |.
+    h3 Other Resources
+    ul(class="list-unstyled")
+        li
+            a(href="static/files/phd-presentation-third-year.pdf") Slides
+            |  for my third year Ph.D. presentation
+        li
+            a(href="static/files/ws-presentation.pdf") Slides
+            |  of the presentation gave at 
+            a(href="http://daselab.cs.wright.edu/daselab.html") DaSe Lab, Wright State University 
+        li
+            a(href="static/files/phd-presentation-second-year.pdf") Slides
+            |  for my second year Ph.D. presentation
+        li
+            a(href="static/files/extraction-caise2014.pdf") Presentation
+            |  of the 
+            a(href="http://dx.doi.org/10.1007/978-3-319-07881-6_39") paper
+            |  on Facet Extraction, gave at the 
+            a(href="http://delab.csd.auth.gr/caise2014/") CAiSE Conference
+        li
+            a(href="static/files/eswc-summer-school-2013.pdf") Poster 
+            |presented at the 
+            a(href="http://summerschool2013.eswc-conferences.org/") 3rd ESWC Summer School
+        li
+            a(href="static/files/phd-presentation-first-year.pdf") Slides
+            |  for my first year Ph.D. presentation
+    h3 Publications
+    ul(class="list-unstyled")
+        li
+            a(href="http://dblp.uni-trier.de/pers/hd/p/Porrini:Riccardo") DBLP
+        li
+            a(href="https://scholar.google.it/citations?user=mmGEmMwAAAAJ") Google Scholar
