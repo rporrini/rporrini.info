@@ -13,9 +13,7 @@
     "bootstrap" : "rm -rf node_modules && npm install && npm test",
     "test": "mocha test/unit",
     "test:production": "ENVIRONMENT=www.rporrini.info mocha test/production && ENVIRONMENT=rporrini.info mocha test/production",
-    "test:stage": "ENVIRONMENT=stage.rporrini.info scripts/test.sh production",
-    "deploy:stage": "git push staging master && npm run -s test:stage",
-    "deploy:production": "git push heroku master && npm run -s test:production"
+    "test:staging": "ENVIRONMENT=staging.rporrini.info mocha test/production"
   },
   "dependencies": {
     "express": "4.14.0",
