@@ -5,7 +5,7 @@ var Poet = require('poet');
 var blog = require('./blog');
 
 var send404 = function (res) {
-	res.send(404, 'There is nothing here!');
+	res.status(404).send('There is nothing here!');
 };
 
 var app = express();

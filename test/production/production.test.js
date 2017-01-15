@@ -27,7 +27,7 @@ describe('application', function () {
 function isAccessible(path, done) {
 	request
 		.get('http://' + process.env.ENVIRONMENT + path)
-		.end(function (res) {
+		.end(function (err, res) {
 			res.status.should.equal(200);
 			done();
 		});
