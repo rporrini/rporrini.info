@@ -10,6 +10,7 @@
     "url": "git://github.com/rporrini/rporrini.info"
   },
   "scripts": {
+    "start": "node web.js",
     "test": "scripts/run-backend-tests.sh unit coverage && scripts/run-ui-tests.sh && echo '****** done ******'"
   },
   "dependencies": {
@@ -19,15 +20,16 @@
     "moment": "~2.8.3"
   },
   "devDependencies": {
-    "supertest": "0.13.0",
-    "superagent": "0.18.0",
-    "should": "4.0.1",
-    "karma": "0.12.0",
-    "karma-mocha": "0.1.3",
-    "karma-firefox-launcher": "0.1.3",
-    "karma-phantomjs-launcher": "0.1.3",
     "coveralls": "~2.11.2",
+    "istanbul": "~0.3.6",
+    "karma": "0.12.0",
+    "karma-firefox-launcher": "0.1.3",
+    "karma-mocha": "0.1.3",
+    "karma-phantomjs-launcher": "0.1.3",
+    "mocha": "^3.2.0",
     "mocha-lcov-reporter": "0.0.1",
-    "istanbul": "~0.3.6"
+    "should": "4.0.1",
+    "superagent": "0.18.0",
+    "supertest": "0.13.0"
   }
 }
