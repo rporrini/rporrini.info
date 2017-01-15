@@ -4,13 +4,3 @@ node_js:
 - '6.9.4'
 after_script:
 - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-deploy:
-  provider: heroku
-  api_key:
-    secure: YY7y1ntBn7AFo+41VtrlHV3SbnAAh2zvmEWuqpJahBTqc2ZbWst+9fQEFKQRVsblgf+tAOA3PMqdAA5o7cRh3tul/eiAy7fjMpqvaVKj7fgtBdFOgtzLlW27hmlucJnO0fvMFoycqa6KXtal/wy2roIyDAoMRBxJlxQzEpcqSNI=
-  app: rporrini-staging
-  on:
-    repo: rporrini/rporrini.info
-  strategy: git
-after_deploy:
-- scripts/test.sh production stage.rporrini.info
