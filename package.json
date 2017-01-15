@@ -2,8 +2,7 @@
   "name": "rporrini.info",
   "version": "0.0.1",
   "engines": {
-    "node": "0.10.x",
-    "npm": "1.3.x"
+    "node": "6.9.x"
   },
   "repository": {
     "type": "git",
@@ -11,21 +10,22 @@
   },
   "scripts": {
     "start": "node web.js",
+    "bootstrap" : "rm -rf node_modules && npm install && npm test",
     "test": "scripts/test.sh unit coverage && echo '****** done ******'"
   },
   "dependencies": {
-    "express": "4.4.1",
-    "jade": "~1.3.1",
-    "poet": "2.0.0",
-    "moment": "~2.8.3"
+    "express": "4.14.0",
+    "jade": "1.11.0",
+    "poet": "2.0.2",
+    "moment": "2.17.1"
   },
   "devDependencies": {
     "coveralls": "~2.11.2",
-    "istanbul": "~0.3.6",
-    "mocha": "^3.2.0",
-    "mocha-lcov-reporter": "0.0.1",
-    "should": "4.0.1",
-    "superagent": "0.18.0",
-    "supertest": "0.13.0"
+    "istanbul": "0.4.5",
+    "mocha": "3.2.0",
+    "mocha-lcov-reporter": "1.2.0",
+    "should": "11.1.2",
+    "superagent": "3.3.2",
+    "supertest": "2.0.1"
   }
 }
