@@ -11,7 +11,7 @@ echo "****** pushing to $1 environment ******"
 
 case $1 in
 	development)
-		git push origin master
+		git push origin
 		;;
 	staging)
 		git push staging master
@@ -22,4 +22,3 @@ case $1 in
 		./scripts/run-backend-tests.sh production rporrini.info
 		;;
 esac
-
