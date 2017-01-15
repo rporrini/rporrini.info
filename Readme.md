@@ -18,4 +18,4 @@
 
 - dependencies: `heroku-cli`
 - staging: `git remote add staging git@heroku.com:rporrini-staging.git`
-- production: `git remote add production git@heroku.com:rporrini.git`
+- production: `git remote add production git@heroku.com:rporrini-production.git`
