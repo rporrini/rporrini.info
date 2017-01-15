@@ -1,7 +1,7 @@
 var request = require('superagent');
 var should = require('should');
 
-describe('application', function () {
+describe(process.env.ENVIRONMENT, function () {
 	describe('/', function () {
 		it('should be accessible', function (done) {
 			isAccessible('/', done);

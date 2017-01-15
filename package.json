@@ -11,7 +11,11 @@
   "scripts": {
     "start": "node web.js",
     "bootstrap" : "rm -rf node_modules && npm install && npm test",
-    "test": "scripts/test.sh unit coverage && echo '****** done ******'"
+    "test": "scripts/test.sh unit",
+    "test:production": "scripts/test.sh production www.rporrini.info && scripts/test.sh production rporrini.info",
+    "test:stage": "scripts/test.sh production stage.rporrini.info",
+    "deploy:stage": "git push staging master && npm run -s test:stage",
+    "deploy:production": "git push heroku master && npm run -s test:production"
   },
   "dependencies": {
     "express": "4.14.0",
@@ -20,10 +24,7 @@
     "moment": "2.17.1"
   },
   "devDependencies": {
-    "coveralls": "2.11.15",
-    "istanbul": "0.4.5",
     "mocha": "3.2.0",
-    "mocha-lcov-reporter": "1.2.0",
     "should": "11.1.2",
     "superagent": "3.3.2",
     "supertest": "2.0.1"

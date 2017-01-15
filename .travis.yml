@@ -2,5 +2,3 @@ sudo: false
 language: node_js
 node_js:
 - '6.9.4'
-after_script:
-- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
